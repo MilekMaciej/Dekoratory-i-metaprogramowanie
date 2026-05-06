@@ -1,0 +1,26 @@
+# ZADANIE 2: Introspekcja i Refleksja
+# ==========================================
+# Cel: Zbadanie i modyfikacja struktury obiektu w trakcie działania programu (runtime).
+# Polecenie: Uzupełnij kod, wykorzystując wbudowane funkcje Pythona do introspekcji i refleksji.
+
+class PustaKlasa:
+    pass
+
+obiekt = PustaKlasa()
+
+print("--- TEST ZADANIA 2 ---")
+# TODO 1: Użyj odpowiedniej funkcji (introspekcja), aby sprawdzić, czy 'obiekt' posiada atrybut o nazwie 'wersja'.
+czy_ma_wersje = ... 
+print(f"Czy obiekt ma atrybut 'wersja' przed zmianą? {czy_ma_wersje}")
+
+if not czy_ma_wersje:
+    # TODO 2: Użyj odpowiedniej funkcji (refleksja), aby dynamicznie dodać do 'obiektu' atrybut 'wersja' o wartości 1.0.
+    ... 
+
+# TODO 3: Ponownie użyj introspekcji (np. dir() lub getattr/hasattr), aby potwierdzić dodanie atrybutu.
+czy_ma_wersje_po_zmianie = ...
+print(f"Czy obiekt ma atrybut 'wersja' po zmianie? {czy_ma_wersje_po_zmianie}")
+
+# Odkomentuj, aby sprawdzić wartość dodanego atrybutu:
+# print(f"Wartość atrybutu wersja to: {obiekt.wersja}")
+print("\n")
