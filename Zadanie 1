@@ -1,0 +1,35 @@
+import functools
+
+# ==========================================
+# ZADANIE 1: Klasyczny Dekorator
+# ==========================================
+# Cel: Zrozumienie mechanizmu działania funkcji wyższego rzędu i oddzielania logiki pobocznej.
+# Polecenie: Napisz dekorator @logger. Uzupełnij brakujące fragmenty kodu (oznaczone jako TODO).
+
+def logger(funkcja_oryginalna):
+    # TODO 1: Użyj odpowiedniego dekoratora z modułu functools, aby zachować metadane oryginalnej funkcji
+    @...
+    def opakowanie( # TODO 2: Dodaj argumenty (*args, **kwargs), aby funkcja przyjmowała ich dowolną liczbę
+        ...
+    ):
+        print(f"Wywołuję funkcję: {funkcja_oryginalna.__name__} z argumentami pozycyjnymi i nazwanych")
+        
+        # TODO 3: Wywołaj oryginalną funkcję z przekazanymi argumentami i zapisz wynik do zmiennej 'wynik'
+        wynik = ... 
+        
+        print(f"Funkcja {funkcja_oryginalna.__name__} zwróciła wynik: {wynik}")
+        
+        # TODO 4: Zwróć wynik
+        return ...
+    
+    return opakowanie
+
+# --- Test Zadania 1 ---
+print("--- TEST ZADANIA 1 ---")
+@logger
+def dodaj(a, b):
+    return a + b
+
+# Odkomentuj poniższą linijkę, aby przetestować:
+# print(dodaj(2, 3))
+print("\n")
