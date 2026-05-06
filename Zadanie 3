@@ -1,0 +1,22 @@
+# ZADANIE 3: Dynamiczne tworzenie klas
+# ==========================================
+# Cel: Zastosowanie metaprogramowania do automatycznego generowania struktur na poziomie typów.
+# Polecenie: Użyj funkcji type() do wygenerowania klasy 'Pojazd' w jednej linijce.
+
+print("--- TEST ZADANIA 3 ---")
+
+# TODO 1: Wygeneruj klasę o nazwie 'Pojazd', która:
+# - dziedziczy po wbudowanej klasie 'object'
+# - posiada atrybuty klasowe: 'ilosc_kol' o wartości 4 oraz 'typ_silnika' o wartości 'spalinowy'.
+Pojazd = type(
+    # 1. Podaj nazwę klasy jako string: ...,
+    # 2. Podaj krotkę z klasami bazowymi: ...,
+    # 3. Podaj słownik z atrybutami: ...
+)
+
+# --- Test Zadania 3 ---
+# Odkomentuj poniższe linijki, aby przetestować:
+# moj_pojazd = Pojazd()
+# print(f"Mój nowo wygenerowany pojazd ma kół: {moj_pojazd.ilosc_kol}")
+# print(f"Typ silnika to: {moj_pojazd.typ_silnika}")
+# print(f"Został stworzony z klasy: {type(moj_pojazd)}")
