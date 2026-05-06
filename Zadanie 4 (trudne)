@@ -1,0 +1,46 @@
+# ==========================================
+# ZADANIE 4 (Dla zaawansowanych): Własna Metaklasa 
+# ==========================================
+# Cel: Użycie metaklasy do analizy i walidacji kodu w momencie jego definiowania (tworzenia klasy).
+# Polecenie: Napisz metaklasę 'WymagajDokumentacjiMeta', która wymusza, aby każda 
+# klasa z niej korzystająca posiadała docstring (ciąg znaków dokumentujący klasę).
+# Jeśli klasa nie ma docstringa, metaklasa powinna rzucić błąd TypeError w czasie jej tworzenia.
+
+class WymagajDokumentacjiMeta(type):
+    # TODO 1: Przeciąż magiczną metodę odpowiadającą za tworzenie nowej instancji klasy.
+    # Wskazówka: Zgodnie z prezentacją, kluczowa dla metaklas jest metoda __new__.
+    def ...(cls, nazwa_klasy, klasy_bazowe, slownik_atrybutow):
+        
+        # TODO 2: Sprawdź, czy w słowniku atrybutów znajduje się klucz '__doc__' 
+        # i czy ma on jakąś wartość (nie jest pusty/None).
+        if ... :
+            raise TypeError(f"Błąd metaprogramowania: Klasa '{nazwa_klasy}' musi posiadać dokumentację (docstring)!")
+        
+        # TODO 3: Jeśli klasa ma dokumentację, zwróć oryginalne wywołanie tworzenia klasy,
+        # korzystając z super() i przekazując wszystkie argumenty.
+        return super()....(cls, nazwa_klasy, klasy_bazowe, slownik_atrybutow)
+
+
+# --- Test Zadania 4 ---
+print("--- TEST ZADANIA 4 ---")
+
+try:
+    # Ta klasa powinna utworzyć się bez błędów
+    class PoprawnaKlasa(metaclass=WymagajDokumentacjiMeta):
+        """To jest wzorowa dokumentacja klasy."""
+        pass
+    print("PoprawnaKlasa została utworzona z sukcesem.")
+
+except TypeError as e:
+    print(f"Nieoczekiwany błąd: {e}")
+
+try:
+    # Odkomentowanie poniższego kodu powinno natychmiastowo wyrzucić TypeError!
+    # class KlasaBezDokumentacji(metaclass=WymagajDokumentacjiMeta):
+    #     pass
+    
+    # print("Jeśli to czytasz, znaczy że metaklasa NIE zadziałała prawidłowo.")
+    pass
+
+except TypeError as e:
+    print(f"Sukces metaklasy! Przechwycono brak dokumentacji: {e}")
